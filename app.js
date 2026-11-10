@@ -1118,6 +1118,9 @@ async function createVault(pin) {
 }
 function startSecurity() {
   if (!localStorage.getItem(VAULT_KEY)) { showSecurity("setupScreen"); return; }
+  // lockScreen lives inside appShell; reveal the shell before showing it,
+  // otherwise reopening the installed PWA leaves a completely white page.
+  document.getElementById("appShell").classList.add("ready");
   showSecurity("lockScreen");
 }
 document.getElementById("setupSubmit")?.addEventListener("click",async()=>{const a=document.getElementById("setupPin").value,b=document.getElementById("setupPinConfirm").value,err=document.getElementById("setupError");if(a.length<6||a.length>64||a!==b){err.textContent="Choisissez deux fois un mot de passe de 6 à 64 caractères.";return;}try{await createVault(a);}catch(e){err.textContent="Impossible de créer le coffre local.";}});
