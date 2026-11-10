@@ -195,12 +195,12 @@ footer{max-width:1120px;margin:0 auto;padding:24px 28px 130px;border:0}
   html,body{overflow-x:hidden;}
   /* Keep the brand below the iPhone notch/Dynamic Island. In PWA standalone
      mode safe-area-inset-top can be reported as zero, so keep a hard minimum. */
-  header{padding-top:max(72px, calc(env(safe-area-inset-top) + 24px));}
+  header.app-header{padding-top:max(96px, calc(env(safe-area-inset-top) + 28px)) !important;}
   nav{bottom:calc(env(safe-area-inset-bottom) + 78px);}
   main{padding-bottom:calc(178px + env(safe-area-inset-bottom));}
   footer{padding-bottom:calc(190px + env(safe-area-inset-bottom));}
   @media(max-width:700px){
-    header{padding-top:max(72px, calc(env(safe-area-inset-top) + 26px));padding-left:18px;padding-right:18px;}
+    header.app-header{padding-top:max(96px, calc(env(safe-area-inset-top) + 30px)) !important;padding-left:18px;padding-right:18px;}
     nav{bottom:calc(env(safe-area-inset-bottom) + 78px);max-width:calc(100vw - 10px);}
     main{padding-bottom:calc(185px + env(safe-area-inset-bottom));}
   }

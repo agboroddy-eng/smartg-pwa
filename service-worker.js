@@ -1,4 +1,4 @@
-const CACHE_NAME = "smartg-offline-v5-password-only";
+const CACHE_NAME = "smartg-offline-v6-safe-header";
 const ASSETS = [
   "./",
   "./index.html",
